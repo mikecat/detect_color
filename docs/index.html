@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>画面から色を検知するやつ</title>
+		<script src="detect_color.js"></script>
+	</head>
+	<body>
+		<h1>画面から色を検知するやつ</h1>
+		<p>
+			<button type="button" id="startCapture" autocomplete="off">キャプチャ開始</button>
+			<button type="button" id="stopCapture" disabled autocomplete="off">キャプチャ停止</button>
+		</p>
+		<p>
+			<video id="capturedVideo"></video>
+		</p>
+		<p>
+			検知対象：<input type="color" id="targetColor" value="#ffffff">
+			<button type="button" id="useEyeDropper">スポイトで選択</button>
+			許容誤差：<input type="number" id="allowedDifference" min="0" max="255" value="10" size="5">
+			ノイズフィルタ (要求同状態連続数)：<input type="number" id="filterThreshold" min="1" value="2" size="5">
+			<label for="notifyOnDetection">
+				<input type="checkbox" id="notifyOnDetection">
+				検知時通知を行う
+			</label>
+		</p>
+		<p>
+			検知状態：<span id="detectionStatus">オフ</span>
+		</p>
+	</body>
+</html>
